@@ -1,0 +1,60 @@
+#country-labels {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  pointer-events: none;
+}
+
+#country-labels > * {
+  position: absolute;
+  color: #fff;
+  text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;
+}
+
+.country-label {
+  font-style: italic; 
+}
+
+.country-label-big {
+  font-size: 4em; 
+}
+
+.country-label-med {
+  font-size: 2em; 
+}
+
+.country-label-small {
+  font-size: 1em; 
+}
+
+.usa-country-label {
+  top: 35%;
+  left: 2.3%;
+}
+
+.aus-country-label {
+  top: 62%;
+  left: 2.3%;
+}
+
+.fra-country-label {
+  top: 53.7%;
+  left: 2.4%;
+}
+
+.gbr-country-label {
+  top: 72.8%;
+  left: 2.1%;
+}
+
+.rsa-country-label {
+  top: 79%;
+  left: 2.2%;
+}
+
+.country-label-desc {
+  font-size: 0.9em;
+  font-style: normal;
+}
