@@ -4,13 +4,18 @@
   bottom: 0px;
   left:0px;
   right:0px;
-  pointer-events: none;
+  /*pointer-events: none;*/
+}
+
+.country-label-head {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 #country-labels > * {
   position: absolute;
   color: #fff;
-  text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;
+  text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;/
 }
 
 .country-label {
@@ -55,6 +60,13 @@
 }
 
 .country-label-desc {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-style: normal;
+}
+
+.player-count-label {
+  color: #3a3a3a !important;
+  text-shadow: none !important;
+  font-size: 0.8em;
+  font-style: italic;
 }
