@@ -28,9 +28,9 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var q = d3.queue();
-q.defer(d3.csv, "../assets/country_by_year2.csv");
-q.defer(d3.json, "../assets/countries.json");
-q.defer(d3.json, "../assets/continents.json");
+q.defer(d3.csv, "assets/country_by_year2.csv");
+q.defer(d3.json, "assets/countries.json");
+q.defer(d3.json, "assets/continents.json");
 q.await(make)
 
 function make(error, data, countriesJson, continents) {
