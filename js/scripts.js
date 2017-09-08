@@ -1,6 +1,5 @@
 $(function() {
    $("body").mousewheel(function(event, delta) {
-    debugger;
       this.scrollLeft -= (delta * 30);    
       event.preventDefault();
    });
