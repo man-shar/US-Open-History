@@ -80,3 +80,9 @@
   top: -120%;
   left: -16%;
 }
+
+@media (max-width: 650px) {
+  .hide-mobile {
+    display: none;
+  }
+}
