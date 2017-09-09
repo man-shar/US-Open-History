@@ -15,10 +15,11 @@
 #country-labels > * {
   position: absolute;
   color: #fff;
-  text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;/
+  /* text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;/ */
 }
 
 .country-label {
+  text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;
   font-style: italic; 
 }
 
