@@ -6,7 +6,7 @@ body{
 }
 
 * {
-  font-family: 'PT Mono', monospace;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #graphic-svg, #country-labels {
