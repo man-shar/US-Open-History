@@ -4,7 +4,7 @@
   bottom: 0px;
   left:0px;
   right:0px;
-  /*pointer-events: none; */
+  pointer-events: none; 
 }
 
 .country-label-head {
@@ -92,6 +92,10 @@
   font-weight: 700;
   text-shadow: 1px 1px 1px #fff, 1px 1px 1px #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
   color: #111;
+}
+
+#tooltip-container {
+  position: absolute;
 }
 
 @media (max-width: 650px) {

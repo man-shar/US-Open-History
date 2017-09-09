@@ -46,7 +46,8 @@ function make(error, data, countriesJson, continents) {
     .keys(countries)
     (data);
 
-  
+  console.log(stack)
+
   var x = d3.scaleLinear()
     .domain([1968, 2017])
     .range([0, width]);
@@ -76,12 +77,36 @@ function make(error, data, countriesJson, continents) {
       .data(stack)
       .enter().append("path")
       .attr("d", area)
+      .attr("id", function(d) { return d.key + "-path"; })
       .style("fill", function(d) { if(d.key == "ind") return "#fff"; return color[continents[countriesJson[d.key]]]; })
       .style("stroke", "#3a3a3a")
       .style("stroke-width", 0.3)
       .on("click", function(d) {
         console.log(countriesJson[d.key]);
         // console.log(d);
+      })
+      .on("mousemove", function(d) {
+        d3.select("#tooltip-container").style("opacity", 0.9)
+        var mouse = d3.mouse(this);
+        var year = (Math.floor(x.invert(mouse[0])));
+        var country_players = d[year - 1968]["data"][d.key];
+        var total_players = d[year - 1968]["data"]["total_players"];
+        var total_countries = d[year - 1968]["data"]["total_countries"];
+        d3.select("#tooltip-container")
+          .style("left", (mouse[0] * 100 / width + 0.2) + "%")
+          .style("top", (mouse[1] * 100 / height + 2) + "%");
+
+        d3.select("#tooltip-country-name")
+          .text(countriesJson[d.key])
+          .style("color", color[continents[countriesJson[d.key]]]);
+
+        d3.select("#tooltip-year").text(year);
+        d3.select("#tooltip-country-players").text("Players: " + country_players);
+        d3.select("#tooltip-total-players").text("Total players: " + total_players);
+        d3.select("#tooltip-total-countries").text("Total countries: " + total_countries);
+      })
+      .on("mouseout", function(d) {
+        d3.select("#tooltip-container").style("opacity", 0)
       });
 
   g.append("g")
