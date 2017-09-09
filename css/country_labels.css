@@ -4,7 +4,7 @@
   bottom: 0px;
   left:0px;
   right:0px;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .country-label-head {
@@ -15,7 +15,7 @@
 #country-labels > * {
   position: absolute;
   color: #fff;
-  text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;/
+  /* text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;/ */
 }
 
 .country-label {
