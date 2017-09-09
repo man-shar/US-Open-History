@@ -76,7 +76,7 @@ function make(error, data, countriesJson, continents) {
       .data(stack)
       .enter().append("path")
       .attr("d", area)
-      .style("fill", function(d) { return color[continents[countriesJson[d.key]]]; })
+      .style("fill", function(d) { if(d.key == "ind") return "#fff"; return color[continents[countriesJson[d.key]]]; })
       .style("stroke", "#3a3a3a")
       .style("stroke-width", 0.3)
       .on("click", function(d) {
