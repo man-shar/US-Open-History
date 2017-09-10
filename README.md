@@ -1,4 +1,4 @@
-# electoral-trust-sankey
+# us-open-history
 - **Headline**: A brief history of the US Open
 - **Description**: An amazing graphic tells the entire history of the US Open men's tournament.
 - **Author**: Manas Sharma
