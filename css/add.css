@@ -39,7 +39,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
 }
 
 .titles-wrapper, .explain-wrapper {
@@ -99,6 +99,9 @@ body{
   .titles-wrapper h1 {
      max-width: 550px;
      font-size: 2.5em;
+  }
+  .explain-wrapper p, .explain-wrapper h4, .explain-wrapper h3, .explain-wrapper h2, .explain-wrapper h1 {
+    font-size: 0.9em;
   }
 }
 
