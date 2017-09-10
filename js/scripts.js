@@ -27,7 +27,7 @@ d3.selectAll(".right-arrow").on("click", function() {
 
 d3.selectAll(".left-arrow").on("click", function() {
   var pos =d3.select("body").node().scrollLeft;
-  pos = ($($(".titles-wrapper")[0])).outerWidth() * (Math.floor(pos / ($($(".titles-wrapper")[0])).outerWidth()));
+  pos = ($($(".titles-wrapper")[0])).outerWidth() * (Math.ceil(pos / ($($(".titles-wrapper")[0])).outerWidth()) - 1);
   $("html, body").animate({scrollLeft: pos}, 500);
 })
 
