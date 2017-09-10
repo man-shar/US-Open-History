@@ -68,6 +68,7 @@ body{
 }
 
 .explain-wrapper h4 {
+  font-weight: bold;
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
 } 
