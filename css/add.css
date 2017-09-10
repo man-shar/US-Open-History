@@ -94,6 +94,10 @@ body{
   font-size: 2em;
 }
 
+.arrow {
+  cursor: pointer;
+}
+
 .scroll-this-way {
   margin-top: 50px;
   font-size: 1em;

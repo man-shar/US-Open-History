@@ -19,6 +19,18 @@ $(function() {
    });
 });
 
+d3.selectAll(".right-arrow").on("click", function() {
+  var pos =d3.select("body").node().scrollLeft;
+  pos += ($($(".titles-wrapper")[0])).outerWidth();
+  $("html, body").animate({scrollLeft: pos}, 500);
+})
+
+d3.selectAll(".left-arrow").on("click", function() {
+  var pos =d3.select("body").node().scrollLeft;
+  pos -= ($($(".titles-wrapper")[0])).outerWidth();
+  $("html, body").animate({scrollLeft: pos}, 500);
+})
+
 var svg = d3
     .select("#graphic-svg");
 
