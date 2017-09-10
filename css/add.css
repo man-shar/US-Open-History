@@ -114,7 +114,7 @@ body{
 
 @media (max-width: 500px) {
   html {
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
   }
   .titles-wrapper h1 {
     max-width: 300px;

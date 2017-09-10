@@ -1,3 +1,12 @@
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+    e = e || window.event;
+    if (e.keyCode == '9') {
+        e.preventDefault();
+    }
+}
+
 d3.select("#close-tooltip")
   .on("click", function(d) {
     d3.select("#tooltip-container").style("opacity", 0);
@@ -51,7 +60,7 @@ function make(error, data, countriesJson, continents) {
     .keys(countries)
     (data);
 
-  // console.log(stack)
+  // console.log(data)
 
   var x = d3.scaleLinear()
     .domain([1968, 2017])
@@ -88,6 +97,7 @@ function make(error, data, countriesJson, continents) {
       .style("stroke-width", 0.3)
       .on("mousemove", function(d) {
         d3.select("#tooltip-container").style("opacity", 0.9)
+        d3.select("#" + d.key + "-path").style("stroke", "#fff").style("stroke-width", 1);
         var mouse = d3.mouse(this);
         var year = (Math.round(x.invert(mouse[0])));
         var country_players = d[year - 1968]["data"][d.key];
@@ -136,6 +146,9 @@ function make(error, data, countriesJson, continents) {
         d3.select("#tooltip-total-countries").text("Total countries: " + total_countries);
       })
       .on("mouseout", function(d) {
+        d3.select("#" + d.key + "-path")
+        .style("stroke", "#3a3a3a")
+        .style("stroke-width", 0.3)
         d3.select("#tooltip-container").style("opacity", 0)
       });
 
@@ -152,4 +165,36 @@ function make(error, data, countriesJson, continents) {
     .attr("transform", "translate(19978.5,0)")
     .select("text")
     .attr("x", -11);
+
+  var max = data.reduce(function(acc, year, i) {
+    acc[year.year] = {}
+    acc[year.year] = countries.sort(function(a, b) {
+      if(+year[a] >= +year[b])
+        return -1
+      return 1
+    }).slice(0, 5)
+    return acc;
+  }, {});
+
+  // console.log(stack)
+
+  // var vals = stack.reduce(function(acc, country) {
+  //   acc[country.key] = country;
+  //   return acc;
+  // }, {});
+
+  // var str = "";
+  // // <div class='player-count-label aiAbs' style='top:59.4299%;left:0.1862%;'>
+  // //           <p class='aiPstyle4'>USA: 51 players</p>
+  // //         </div>
+  // console.log
+
+  // d3.range(1968, 2018).forEach(function(year, i) {
+  //   max[year + ""].forEach(function(country, j) {
+  //     if(data[year - 1968][country] >= 5) {
+  //       str += "<div class='player-count-label aiAbs' style='top:" + (y((vals[country][year - 1968][1] + vals[country][year - 1968][0]) / 2) * 100 / height + 20 * 100 / height) + "%;left:" + ((x(year) + 10) / 200 + 0.12) + "%;'>\n<p class='aiPstyle4'>" + countriesJson[country] + ": " + data[year - 1968][country] + " players</p>\n</div>\n"
+  //     }
+  //   });
+  // });
+  // console.log(str)
 }
