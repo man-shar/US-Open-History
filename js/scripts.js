@@ -1,4 +1,4 @@
-$( "window" ).scroll(function() {
+$(window).scroll(function() {
   var body_position = ($("body").scrollLeft());
   var svg_position_left = $("#graphic-svg").position().left
   var svg_position_right = $("#graphic-svg").position().left + $("#graphic-svg").width()
