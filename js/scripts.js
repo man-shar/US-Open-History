@@ -1,3 +1,16 @@
+$( window ).scroll(function() {
+  var body_position = ($("body").scrollLeft());
+  var svg_position_left = $("#graphic-svg").position().left
+  var svg_position_right = $("#graphic-svg").position().left + $("#graphic-svg").width()
+
+  if((svg_position_left - ($($(".titles-wrapper")[0])).outerWidth()) + 100 <= body_position && (svg_position_right - ($($(".titles-wrapper")[0])).outerWidth()) >= body_position) {
+    d3.select("#legend-container").style("display", "block");
+  }
+  else {
+    d3.select("#legend-container").style("display", "none");
+  }
+});
+
 document.onkeydown = checkKey;
 
 function checkKey(e) {

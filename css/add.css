@@ -148,3 +148,17 @@ body{
     align-items: center;
   justify-content: center;
 }
+
+#legend-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  pointer-events: none;
+}
+
+#legend-container text {
+  font-weight: 700;
+  font-size: .2em;
+  alignment-baseline: central;
+}
