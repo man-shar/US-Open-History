@@ -26,7 +26,6 @@ $(window).scroll(function() {
 // });
 
 $(document).on("touchmove", function() {
-	console.log("aga")
   var body_position = ($("body").scrollLeft());
   var svg_position_left = $("#graphic-svg").position().left
   var svg_position_right = $("#graphic-svg").position().left + $("#graphic-svg").width()
