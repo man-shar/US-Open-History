@@ -80,7 +80,7 @@ body{
 
 .left-arrow {
   position: absolute;
-  left: 5%;
+  left: 3%;
   top: 50%;
   transform: translateX(-50%);
   font-size: 2em;
@@ -88,7 +88,7 @@ body{
 
 .right-arrow {
   position: absolute;
-  right: 5%;
+  right: 3%;
   top: 50%;
   transform: translateX(-50%);
   font-size: 2em;
