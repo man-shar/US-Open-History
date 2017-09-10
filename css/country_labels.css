@@ -20,11 +20,16 @@
 
 .country-label {
   text-shadow: 0.3px 0.3px 0.3px #121212, 0.3px 0.3px 0.3px #121212, 0 -0.3px 0 #121212, -0.3px 0 0 #121212;
-  font-style: italic; 
+  font-style: italic;
+  opacity: 0.8;
 }
 
 .country-label-big {
   font-size: 4em; 
+}
+
+.scroll-this-way {
+  margin-top: 3em;
 }
 
 .country-label-med {
@@ -73,7 +78,6 @@
 }
 
 .player-name-label {
-  font-weight: 700;
   font-size: 0.7em;
   line-height: 0.5;
 }
@@ -96,10 +100,19 @@
 
 #tooltip-container {
   position: absolute;
+  width: 150px;
+  z-index: 10000;
+}
+
+.hide-desktop {
+  display: none;
 }
 
 @media (max-width: 650px) {
   .hide-mobile {
     display: none;
+  }
+  .hide-desktop {
+    display: initial;
   }
 }

@@ -23,7 +23,7 @@
 <link rel="shortcut icon" href="http://www.hindustantimes.com/res/img/app-images/HomePageV1/favicon.ico">
 
 <!-- google webfonts -->
-<link href="https://fonts.googleapis.com/css?family=PT+Mono:400,400i,700|PT+Serif:400,400i,700|Open+Sans:400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Open+Sans:400,400i,700" rel="stylesheet">
 
 <!-- css cdns, use as needs -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -56,10 +56,32 @@
     <div id="graphic-container">
       <div id="intro-div">
         <div class="titles-wrapper">
+          <div class="left-arrow"><span><</span></div>
           <h1 class="headline">A brief history of the US Open</h1>
           <h2 class="byline">By Manas Sharma</h2>
           <hr class="blue-line" />
           <h2 class="dateline">10 September,2017</h2>
+          <div class="scroll-this-way hide-desktop"><p>Scroll this way -></p></div>
+          <div class="right-arrow"><span>></span></div>
+        </div>
+        <div class="explain-wrapper">
+          <div class="left-arrow"><span><</span></div>
+          <p>Tomorrow, Rafael Nadal will play the US Open final against Kevin Anderson. While Nadal is aiming to become the first Spanish man to win the championship thrice in the Open Era, Anderson is aiming to be the first South African to win it, ever.</p>
+          <p>Men from 79 different countries have competed in the US Open single's championship since the start of the Open Era in 1968. The players all had their different styles, some from the clay courts of Spain, some from the hard courts of USA itself while some had their roots in the grass courts of England. Be it Borg's ice-cool net play vs McEnroe's fiery shotmaking or Nadal's hyper aggressive top spin vs Federer's elegance, the varied backgrounds of the players are what make battles between them memorable.</p>
+          <div class="right-arrow"><span>></span></div>
+        </div>
+        <div class="explain-wrapper">
+          <div class="left-arrow"><span><</span></div>
+          <p>We look at the complete history of the US Open since 1968 in context of the nations who've participated in it and also revisiting it's stories and champions along the way.</p>
+          <div class="right-arrow"><span>></span></div>
+        </div>
+        <div class="explain-wrapper">
+          <div class="left-arrow"><span><</span></div>
+          <h4>How to read this graphic</h4>
+          <p>The graphic shows number of players from different countries in the US Open men's single's draw since 1968.</p>
+          <p>The countries are represented as different "ribbons", with each coloured according to the continent it belongs to. The thicker the ribbon, more the number of players from that country who played that year.</p>
+          <p>Some countries with more number of players are labelled along the way. You can hover/tap on a ribbon to view statistics for that country for the year closest to your mouse/finger.</p>
+          <div class="right-arrow"><span>></span></div>
         </div>
       </div>
       <div id="graphic-div">
@@ -305,7 +327,7 @@
           </div>
           <div id='g-ai0-86' class='player-name-label g-aiAbs' style='top:79.9805%;left:77.83189999999999%;'>
           </div>
-          <div id='ai0-60' class='country-label-head g-aiAbs' style='top:13.8855%;left:79.74%;'><p>Fourth time's also the charm</p></div>
+          <div id='ai0-60' class='country-label-head g-aiAbs' style='top:13.8855%;left:79.74%;'><p></p></div>
           <div id='ai0-60' class='country-label-desc g-aiAbs' style='top:19.4397%;left:79.74%;width:1.1378%;'>
             <p>Federer became the first man in the Open Era to win four straight US Open titles, defeating Novak Djokovic in the final.</p>
             <p>Federer's US Open win marked his third overall and second consecutive time he won three Grand Slams in a year. He is the only male player to do so.</p>
@@ -1405,12 +1427,21 @@
           </div>
         </div>
         <svg id="graphic-svg"></svg>
-        <div id="tooltip-container" style="background-color: #fff;border:0.2px solid #ccc;padding: 0.3em 0.5em 0.7em 0.5em;font-size: 0.8em;">
+        <div id="tooltip-container" style="opacity: 0;background-color: #fff;border-radius: 0.2em;border:0.2px solid #ccc;padding: 0.3em 0.5em 0.7em 0.5em;font-size: 0.8em;">
           <div><span id="tooltip-year" style="font-weight: 700;color: #3a3a3a;font-size: 1.1em;"></span></div>
           <div><span id="tooltip-country-name" style="font-weight: 700;font-size: 1.1em;"></span></div>
-          <div><span id="tooltip-country-players" style="color: #3a3a3a;"></span></div>
-          <div><span id="tooltip-total-players" style="color: #3a3a3a;"></span></div>
-          <div><span id="tooltip-total-countries" style="color: #3a3a3a;"></span></div>
+          <div><span id="tooltip-country-players" style="font-size: 0.9em;color: #3a3a3a;"></span></div>
+          <div><span id="tooltip-total-players" style="font-size: 0.9em;color: #3a3a3a;"></span></div>
+          <div><span id="tooltip-total-countries" style="font-size: 0.9em;color: #3a3a3a;"></span></div>
+          <div class="hide-desktop"><span id="close-tooltip" style="position: absolute;right: 5%;top: 2%;">x</span></div>
+        </div>
+      </div>
+      <div id="intro-div">
+      <div class="explain-wrapper">
+          <h4>2017</h4>
+          <p>USA still leads the number of players tally with 19 players out of 128, closely followed by France at 13 players. Spain is third with 9 players followed by Germany with 8.</p>
+          <p>Interestingly, there was only 1 player from South Africa - Kevin Anderson - this year, and he is in the final facing a spaniard - Rafael Nadal.</p>
+          <p>One of these finalists is from Europe while other from Africa, continents which did not even figure near the top when we started in 1968. A lot has changed since the near total domination of USA at the US Open. And rest assured, a lot will change </p>
         </div>
       </div>
 

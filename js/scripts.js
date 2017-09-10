@@ -1,3 +1,8 @@
+d3.select("#close-tooltip")
+  .on("click", function(d) {
+    d3.select("#tooltip-container").style("opacity", 0);
+  })
+
 $(function() {
    $("body").mousewheel(function(event, delta) {
       this.scrollLeft -= (delta * 30);    
@@ -46,7 +51,7 @@ function make(error, data, countriesJson, continents) {
     .keys(countries)
     (data);
 
-  console.log(stack)
+  // console.log(stack)
 
   var x = d3.scaleLinear()
     .domain([1968, 2017])
@@ -81,20 +86,45 @@ function make(error, data, countriesJson, continents) {
       .style("fill", function(d) { if(d.key == "ind") return "#fff"; return color[continents[countriesJson[d.key]]]; })
       .style("stroke", "#3a3a3a")
       .style("stroke-width", 0.3)
-      .on("click", function(d) {
-        console.log(countriesJson[d.key]);
-        // console.log(d);
-      })
       .on("mousemove", function(d) {
         d3.select("#tooltip-container").style("opacity", 0.9)
         var mouse = d3.mouse(this);
-        var year = (Math.floor(x.invert(mouse[0])));
+        var year = (Math.round(x.invert(mouse[0])));
         var country_players = d[year - 1968]["data"][d.key];
         var total_players = d[year - 1968]["data"]["total_players"];
         var total_countries = d[year - 1968]["data"]["total_countries"];
-        d3.select("#tooltip-container")
+
+        if(mouse[1] < 50)
+        {
+          // debugger;
+          d3.select("#tooltip-container")
+          .style("top", ((20000) / height + 0.2) + "%");
+        }
+
+        if(mouse[1] > (height - 150))
+        {
+          // debugger;
+          d3.select("#tooltip-container")
+          .style("top", ((height - 150) * 100 / height + 0.2) + "%");
+        }
+
+        if(mouse[1] > 50 && mouse[1] < (height - 150))
+        {
+          d3.select("#tooltip-container")
+          .style("top", ((mouse[1]) * 100 / height + 0.2) + "%");
+        }
+
+        if(mouse[0] > (width - 150))
+        {
+          d3.select("#tooltip-container")
+          .style("left", (((width) - 250) * 100 / width + 0.2) + "%");
+        }
+
+        if(mouse[0] < (width - 150))
+        {
+          d3.select("#tooltip-container")
           .style("left", (mouse[0] * 100 / width + 0.2) + "%")
-          .style("top", (mouse[1] * 100 / height + 2) + "%");
+        }
 
         d3.select("#tooltip-country-name")
           .text(countriesJson[d.key])
@@ -116,4 +146,10 @@ function make(error, data, countriesJson, continents) {
   svg
     .select(".domain")
     .remove();
+
+  d3.select(".axis--x")
+    .selectAll(".tick:last-child")
+    .attr("transform", "translate(19978.5,0)")
+    .select("text")
+    .attr("x", -11);
 }
