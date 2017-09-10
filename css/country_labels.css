@@ -28,10 +28,6 @@
   font-size: 4em; 
 }
 
-.scroll-this-way {
-  margin-top: 3em;
-}
-
 .country-label-med {
   font-size: 2em; 
 }
@@ -113,6 +109,6 @@
     display: none;
   }
   .hide-desktop {
-    display: initial;
+    display: block;
   }
 }
